@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion Asia Frontier Presentation</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #37352f;
+            --accent-notion: #eb5757; /* Notion Red */
+            --sea-gold: #c5a059; /* Batik Gold */
+            --sea-teal: #2f8d8d; /* Tropical Sea */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Presentation Wrapper */
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+
+        .slide {
+            width: 80%;
+            height: 80%;
+            scroll-snap-align: start;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 4px solid var(--sea-gold);
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(252,252,252,1) 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 20vh;
+            position: relative;
+        }
+
+        h1, h2, h3 { font-weight: 700; }
+        h1 { font-size: 3rem; color: var(--accent-notion); border-bottom: 2px solid #eee; }
+        h2 { font-size: 2rem; color: var(--sea-teal); margin-top: 0; }
+        
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin-bottom: 1rem; font-size: 1.2rem; line-height: 1.6; }
+        li::before { content: "◆ "; color: var(--sea-gold); margin-right: 10px; }
+
+        .footer-note {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #999;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <section class="slide">
+            <h1>Co-Crafting Notion’s Next Asia Frontier</h1>
+            <p><strong>Commercial Objective:</strong> Establish and scale Enterprise GTM in SG & HK, with incubation in SEA + India.</p>
+            <div class="footer-note">Scroll down to explore</div>
+        </section>
+
+        <!-- Slide 2: Territory Plan -->
+        <section class="slide">
+            <h2>1. Develop Outbound Engine</h2>
+            <ul>
+                <li><strong>Displace Confluence:</strong> Full-stack migration strategy.</li>
+                <li><strong>Co-craft Use Cases:</strong> Fintech, SaaS, E-Commerce, HealthTech, and AI/Data segments.</li>
+            </ul>
+        </section>
+
+        <!-- Slide 3: Growth -->
+        <section class="slide">
+            <h2>2. Bridge PLG to Enterprise</h2>
+            <ul>
+                <li><strong>Community Make:</strong> Drive awareness of Custom Agents & Notion 3.0.</li>
+                <li><strong>Advocate Spotlights:</strong> Transforming users into enterprise magnets.</li>
+                <li><strong>Executive Roundtables:</strong> Engaging CXO, COO, CIO, CHRO levels.</li>
+            </ul>
+        </section>
+
+        <!-- Slide 4: Ecosystem -->
+        <section class="slide">
+            <h2>3. ASEAN AI Connective Tissue</h2>
+            <ul>
+                <li><strong>Government Partnerships:</strong> Tapping into regional AI Grants (IMDA, HRD Corp, TESDA).</li>
+                <li><strong>Academia & Associations:</strong> Seeded curriculum and "Inside-Out" transformation models.</li>
+                <li><strong>Strategic POCs:</strong> Launching with Channel SIs and Leadership Consultants.</li>
+            </ul>
+        </section>
+
+        <!-- Slide 5: Execution Plan -->
+        <section class="slide">
+            <h2>Execution Roadmap (18M)</h2>
+            <ul>
+                <li><strong>Months 0-3 (Plan):</strong> Actively listen & sharpen focus on SG/HK.</li>
+                <li><strong>Months 3-6 (Land):</strong> Win proof points & run segment-specific plays.</li>
+                <li><strong>Months 6-12 (Expand):</strong> Scale templates & activate regional wedges (MY, PH).</li>
+                <li><strong>Months 12-18 (Scale):</strong> Replicate the playbook & position as APAC AI layer.</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
