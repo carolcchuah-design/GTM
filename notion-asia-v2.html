@@ -7,7 +7,7 @@
   
   <!-- Notion Typography Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
@@ -267,6 +267,16 @@
       font-size: 14.5px;
       color: var(--text-muted);
       line-height: 1.6;
+    }
+
+    /* Sub-card Box inside Bento for structured roles */
+    .inner-subcard {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 10px;
+      font-size: 13.5px;
     }
 
     /* Notion Tags */
@@ -942,27 +952,54 @@
       </p>
 
       <div class="bento-grid">
-        <!-- Strengths-Based Strategy -->
+        <!-- Strengths-Based Talent Strategy & Talent Attraction/Development -->
         <div class="bento-card col-6">
           <div class="card-label">Talent Architecture</div>
           <div class="card-title">🧭 Strengths-Based Talent Strategy</div>
           <div class="card-desc">
             <ul style="margin-left: 18px; margin-top: 8px;">
-              <li><strong>Situational Leadership:</strong> Challenge high-performing, high-potential reps to coach, build creative pilots, and chair reviews. Diagnose and invest 1:1 in emerging talent.</li>
-              <li><strong>Talent Principles:</strong> <em>"Always be hiring, always be learning."</em> Foster an apprenticeship culture of continuous workspace mastery.</li>
+              <li style="margin-bottom: 10px;">
+                <strong>Situational Leadership:</strong> Challenge high-performing, high-potential reps to coach, build creative pilots, and chair reviews. Diagnose and invest 1:1 in emerging talent.
+              </li>
+              <li style="margin-bottom: 10px;">
+                <strong>Talent Principles:</strong> <em>"Always be hiring, always be learning."</em> Foster an apprenticeship culture of continuous workspace mastery.
+              </li>
+              <li style="margin-bottom: 6px;">
+                <strong>Talent Attraction & Development:</strong>
+                <div class="inner-subcard">
+                  <div style="font-weight: 700; color: var(--text-title); margin-bottom: 4px;">
+                    Proposed Additions (Next 6 Months):
+                  </div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
+                    <span class="notion-tag tag-blue">1 BDR</span>
+                    <span class="notion-tag tag-green">2 Solutions Consultants (SC)</span>
+                    <span class="notion-tag tag-purple">1 Outcome Architect (OA)</span>
+                  </div>
+                  <div style="font-size: 13px; color: var(--text-body); line-height: 1.55;">
+                    &bull; <strong>Common DNA:</strong> Builder mentality, PLG &rarr; Enterprise fluency (understands bottom-up adoption), AI fluency, transformation orientation, Value Selling.<br />
+                    &bull; <strong>Specialty Experience:</strong> Competitive background (Atlassian/Confluence/Airtable, etc.), Industry specialization (Fintech, E-Commerce, DevOps), Change management / Transformation consultant a plus for Outcome Architect. Partner connections a plus.
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
 
-        <!-- Accountability & Clarity (Updated Content) -->
+        <!-- Accountability & Clarity -->
         <div class="bento-card col-6">
           <div class="card-label">Execution Rhythms</div>
           <div class="card-title">⚡️ Accountability & Clarity</div>
           <div class="card-desc">
             <ul style="margin-left: 18px; margin-top: 8px;">
-              <li><strong>Measure what Matters:</strong> For AI GTM Builders, incorporate customer outcomes as key KPI and normalize periodically to build peer ROI.</li>
-              <li><strong>Operational Cadence:</strong> Weekly Ownership (Forecasting, Top Deals), MEDDPIC Clinics, Stand-up Scrums on Problems to Solve &rarr; Solutioning.</li>
-              <li><strong>Territory Clarity:</strong> Named coverage & strategy leads.</li>
+              <li style="margin-bottom: 12px;">
+                <strong>Measure what Matters:</strong> For AI GTM Builders, incorporate customer outcomes as key KPI and normalize periodically to build peer ROI.
+              </li>
+              <li style="margin-bottom: 12px;">
+                <strong>Operational Cadence:</strong> Weekly Ownership (Forecasting, Top Deals), MEDDPIC Clinics, Stand-up Scrums on Problems to Solve &rarr; Solutioning.
+              </li>
+              <li style="margin-bottom: 12px;">
+                <strong>Territory Clarity:</strong> Named coverage & strategy leads.
+              </li>
             </ul>
           </div>
         </div>
