@@ -7,7 +7,7 @@
   
   <!-- Notion Typography Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
@@ -269,7 +269,7 @@
       line-height: 1.6;
     }
 
-    /* Sub-card Box inside Bento for structured roles */
+    /* Sub-card Box inside Bento */
     .inner-subcard {
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
@@ -322,6 +322,44 @@
       font-size: 22px;
       line-height: 1;
       user-select: none;
+    }
+
+    /* Notion Bookmark / Link Row */
+    .notion-link-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: var(--text-title);
+      transition: all 0.2s ease;
+    }
+
+    .notion-link-block:hover {
+      border-color: var(--border-medium);
+      background: var(--bg-hover);
+      transform: translateX(2px);
+    }
+
+    .notion-link-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .notion-link-title {
+      font-weight: 600;
+      font-size: 14.5px;
+      color: var(--text-title);
+    }
+
+    .notion-link-sub {
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
     /* Toggles */
@@ -845,6 +883,18 @@
       <!-- 2C. Outbound Engine & Industry Clusters -->
       <div class="subsection-block">
         <h3 class="subsection-heading"><span>⚔️</span> Outbound Engine & Industry Clusters</h3>
+
+        <!-- SEA Strategic Accounts Link Block -->
+        <a href="https://app.notion.com/p/85a7af340d134b81ba6f93f8e606bc4d?v=df50022335cb4d8389542d81bb4395aa&t=3c3274e7fa578055a49c00a95bd8c60e" target="_blank" rel="noopener noreferrer" class="notion-link-block">
+          <div class="notion-link-left">
+            <span style="font-size: 20px;">🎯</span>
+            <div>
+              <div class="notion-link-title">SEA Strategic Accounts</div>
+              <div class="notion-link-sub">Target accounts, engagement signals & qualification database &bull; Open in Notion ↗</div>
+            </div>
+          </div>
+          <span class="notion-tag tag-blue">Open Database</span>
+        </a>
         
         <div class="bento-grid" style="margin-bottom: 20px;">
           <div class="bento-card col-6">
