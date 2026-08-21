@@ -361,6 +361,34 @@
       color: var(--text-muted);
     }
 
+    /* Table In-Cell Links */
+    .table-link {
+      color: var(--text-title);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s ease;
+    }
+
+    .table-link:hover {
+      color: var(--accent-blue);
+      text-decoration: underline;
+    }
+
+    .table-link-sub {
+      display: block;
+      font-size: 11.5px;
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .table-link-sub:hover {
+      text-decoration: underline;
+    }
+
     /* Cluster Diagram Component */
     .cluster-diagram-container {
       margin-top: 18px;
@@ -770,15 +798,22 @@
           <table class="notion-table">
             <thead>
               <tr>
-                <th style="width: 15%;">Territory / Cluster</th>
+                <th style="width: 18%;">Territory / Cluster</th>
                 <th style="width: 18%;">Strategic Role</th>
-                <th style="width: 45%;">Country Context</th>
+                <th style="width: 42%;">Country Context</th>
                 <th style="width: 22%;">Primary GTM Motion</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Singapore 🇸🇬</strong></td>
+                <td>
+                  <a href="https://app.notion.com/p/Singapore-Country-Brief-780d3672ffc64d9e9dd10754bb86fa3f" target="_blank" rel="noopener noreferrer" class="table-link">
+                    <strong>Singapore 🇸🇬</strong> ↗
+                  </a>
+                  <a href="https://app.notion.com/p/Singapore-Country-Brief-780d3672ffc64d9e9dd10754bb86fa3f" target="_blank" rel="noopener noreferrer" class="table-link-sub">
+                    Open Country Brief
+                  </a>
+                </td>
                 <td>Anchor enterprise proof market, highest digital density, regional MNC HQs.</td>
                 <td>
                   <div class="context-block">
@@ -798,7 +833,14 @@
               </tr>
 
               <tr>
-                <td><strong>Hong Kong 🇭🇰</strong></td>
+                <td>
+                  <a href="https://app.notion.com/p/Hong-Kong-Country-Brief-99728b5fd38b4febabbddfcf3a7edb89" target="_blank" rel="noopener noreferrer" class="table-link">
+                    <strong>Hong Kong 🇭🇰</strong> ↗
+                  </a>
+                  <a href="https://app.notion.com/p/Hong-Kong-Country-Brief-99728b5fd38b4febabbddfcf3a7edb89" target="_blank" rel="noopener noreferrer" class="table-link-sub">
+                    Open Country Brief
+                  </a>
+                </td>
                 <td>Financial & Professional Services Growth Hub, Gateway to China</td>
                 <td>
                   <div class="context-block">
@@ -818,7 +860,14 @@
               </tr>
 
               <tr>
-                <td><strong>Malaysia & Philippines 🇲🇾 🇵🇭</strong></td>
+                <td>
+                  <a href="https://app.notion.com/p/SEA-Country-Brief-a1887f52834c4a688b69b86bc5ae596a" target="_blank" rel="noopener noreferrer" class="table-link">
+                    <strong>Malaysia & Philippines 🇲🇾 🇵🇭</strong> ↗
+                  </a>
+                  <a href="https://app.notion.com/p/SEA-Country-Brief-a1887f52834c4a688b69b86bc5ae596a" target="_blank" rel="noopener noreferrer" class="table-link-sub">
+                    Open SEA Brief
+                  </a>
+                </td>
                 <td>Low cost, Low localization expansion wedges. Large volume impact</td>
                 <td>
                   <div class="context-block">
@@ -838,7 +887,14 @@
               </tr>
 
               <tr>
-                <td><strong>Indonesia, Thailand, VN 🇮🇩 🇹🇭 🇻🇳</strong></td>
+                <td>
+                  <a href="https://app.notion.com/p/SEA-Country-Brief-a1887f52834c4a688b69b86bc5ae596a" target="_blank" rel="noopener noreferrer" class="table-link">
+                    <strong>Indonesia, Thailand, VN 🇮🇩 🇹🇭 🇻🇳</strong> ↗
+                  </a>
+                  <a href="https://app.notion.com/p/SEA-Country-Brief-a1887f52834c4a688b69b86bc5ae596a" target="_blank" rel="noopener noreferrer" class="table-link-sub">
+                    Open SEA Brief
+                  </a>
+                </td>
                 <td>High-cost, high-upside incubation bets & consumer scale-ups.</td>
                 <td>
                   <div class="context-block">
@@ -858,7 +914,14 @@
               </tr>
 
               <tr>
-                <td><strong>India 🇮🇳</strong></td>
+                <td>
+                  <a href="https://app.notion.com/p/India-Country-Brief-c4075cd6d26d4406bc0c68b72d31518b" target="_blank" rel="noopener noreferrer" class="table-link">
+                    <strong>India 🇮🇳</strong> ↗
+                  </a>
+                  <a href="https://app.notion.com/p/India-Country-Brief-c4075cd6d26d4406bc0c68b72d31518b" target="_blank" rel="noopener noreferrer" class="table-link-sub">
+                    Open Country Brief
+                  </a>
+                </td>
                 <td>High-growth tech unicorns, global SaaS, and developer hubs.</td>
                 <td>
                   <div class="context-block">
@@ -961,18 +1024,6 @@
             <div class="card-label"><span class="notion-tag tag-blue">Fintech & WealthTech Cluster Brief</span></div>
             <div class="card-title">Fintech, WealthTech & Insurtech: KYC Case Coordinator</div>
             <div class="card-desc">MAS compliance trackers, SOC2 audit evidence vaults, cross-border payments product specs, AML/KYC SOP hubs, and permissioned client records.</div>
-
-            <!-- Notion Page Bookmark Link -->
-            <a href="https://app.notion.com/p/Fintech-WealthTech-Insurtech-Cluster-Brief-1a168aee1a5e4c928100bcaa2e488810" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 14px; margin-bottom: 14px;">
-              <div class="notion-link-left">
-                <span style="font-size: 18px;">📄</span>
-                <div>
-                  <div class="notion-link-title">Fintech, WealthTech & Insurtech Cluster Brief</div>
-                  <div class="notion-link-sub">Full segment brief, target accounts, regulatory workflows & operating model &bull; Open Notion Page ↗</div>
-                </div>
-              </div>
-              <span class="notion-tag tag-blue">Open Brief ↗</span>
-            </a>
 
             <!-- KYC Case Coordinator Workflow Visual -->
             <div class="cluster-diagram-container">
@@ -1079,6 +1130,18 @@
                 <strong>Example for Endowus: KYC Case Coordinator.</strong> Shortening workflow by 1-3 business days for high AUM clients can unlock investment dramatically. Conservative estimate of shortening 20-30% faster onboarding whilst still preserving compliance control for regulated environment.
               </div>
             </div>
+
+            <!-- Notion Page Bookmark Link -->
+            <a href="https://app.notion.com/p/Fintech-WealthTech-Insurtech-Cluster-Brief-1a168aee1a5e4c928100bcaa2e488810" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 18px; margin-bottom: 0;">
+              <div class="notion-link-left">
+                <span style="font-size: 18px;">📄</span>
+                <div>
+                  <div class="notion-link-title">Fintech, WealthTech & Insurtech Cluster Brief</div>
+                  <div class="notion-link-sub">Full segment brief, target accounts, regulatory workflows & operating model &bull; Open Notion Page ↗</div>
+                </div>
+              </div>
+              <span class="notion-tag tag-blue">Open Brief ↗</span>
+            </a>
           </div>
         </div>
 
@@ -1089,7 +1152,7 @@
             <div class="card-title">B2B SaaS, DevTools & Enterprise Infrastructure</div>
             <div class="card-desc">Engineering Architecture Decision Records (ADRs), developer onboarding portals, API documentation, sprint management, and GitHub/Jira integrations.</div>
 
-            <a href="https://app.notion.com/p/B2B-SaaS-DevTools-Enterprise-Infrastructure-Cluster-Brief-129226b7d79d45909b178a01f30ff33d" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 16px;">
+            <a href="https://app.notion.com/p/B2B-SaaS-DevTools-Enterprise-Infrastructure-Cluster-Brief-129226b7d79d45909b178a01f30ff33d" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 18px; margin-bottom: 0;">
               <div class="notion-link-left">
                 <span style="font-size: 18px;">🛠️</span>
                 <div>
@@ -1109,7 +1172,7 @@
             <div class="card-title">E-Commerce, Logistics & Retail Tech</div>
             <div class="card-desc">Merchant onboarding wikis, regional marketing launch calendars, 3PL partner SLA trackers, and cross-border supply chain operations.</div>
 
-            <a href="https://app.notion.com/p/E-Commerce-Logistics-Retail-Tech-Cluster-Brief-837bffe2cf104d04a0fdaebbd593edc6" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 16px;">
+            <a href="https://app.notion.com/p/E-Commerce-Logistics-Retail-Tech-Cluster-Brief-837bffe2cf104d04a0fdaebbd593edc6" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 18px; margin-bottom: 0;">
               <div class="notion-link-left">
                 <span style="font-size: 18px;">📦</span>
                 <div>
@@ -1129,7 +1192,7 @@
             <div class="card-title">HRTech, Future of Work & EdTech</div>
             <div class="card-desc">Distributed team handbooks, competency leveling matrices, executive review cadences, and corporate training curricula.</div>
 
-            <a href="https://app.notion.com/p/HRTech-Future-of-Work-EdTech-Cluster-Brief-3f20eb0c4dad485db67a2962a9ea5ed8" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 16px;">
+            <a href="https://app.notion.com/p/HRTech-Future-of-Work-EdTech-Cluster-Brief-3f20eb0c4dad485db67a2962a9ea5ed8" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 18px; margin-bottom: 0;">
               <div class="notion-link-left">
                 <span style="font-size: 18px;">👥</span>
                 <div>
@@ -1149,7 +1212,7 @@
             <div class="card-title">HealthTech, BioTech & Regulated Services</div>
             <div class="card-desc">Clinical study protocols, HIPAA/GDPR health data compliance logs, medical device validation records, and locked auditor workspaces.</div>
 
-            <a href="https://app.notion.com/p/HealthTech-BioTech-Regulated-Services-Cluster-Brief-554ba31d5d35446d96b01d3cc9a88a40" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 16px;">
+            <a href="https://app.notion.com/p/HealthTech-BioTech-Regulated-Services-Cluster-Brief-554ba31d5d35446d96b01d3cc9a88a40" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 18px; margin-bottom: 0;">
               <div class="notion-link-left">
                 <span style="font-size: 18px;">🧬</span>
                 <div>
@@ -1169,7 +1232,7 @@
             <div class="card-title">AI, Data & DeepTech</div>
             <div class="card-desc">LLM experiment tracking, prompt repositories, technical model specs, and Custom Agent orchestration workflows.</div>
 
-            <a href="https://app.notion.com/p/AI-Data-DeepTech-Cluster-Brief-1530ef19921e40a2a95768ac9173371b" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 16px;">
+            <a href="https://app.notion.com/p/AI-Data-DeepTech-Cluster-Brief-1530ef19921e40a2a95768ac9173371b" target="_blank" rel="noopener noreferrer" class="notion-link-block" style="margin-top: 18px; margin-bottom: 0;">
               <div class="notion-link-left">
                 <span style="font-size: 18px;">🤖</span>
                 <div>
