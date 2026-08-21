@@ -362,6 +362,33 @@
       color: var(--text-muted);
     }
 
+    /* Cluster Diagram Component */
+    .cluster-diagram-container {
+      margin-top: 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .cluster-diagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
+      background: #FFFFFF;
+    }
+
+    .cluster-diagram-caption {
+      margin-top: 12px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-body);
+      border-left: 3px solid var(--accent-blue);
+      padding-left: 12px;
+    }
+
     /* Toggles */
     .notion-toggle {
       border: 1px solid var(--border-light);
@@ -924,11 +951,140 @@
           <button class="cluster-btn" onclick="switchClusterTab(5)">AI, Data & DeepTech</button>
         </div>
 
+        <!-- Panel 0: Fintech & WealthTech with Workflow Diagram -->
         <div class="cluster-panel active" id="cluster-tab-0">
           <div class="bento-card col-12">
             <div class="card-label"><span class="notion-tag tag-blue">Cluster Brief 01</span></div>
             <div class="card-title">Fintech, WealthTech & Insurtech</div>
             <div class="card-desc">MAS compliance trackers, SOC2 audit evidence vaults, cross-border payments product specs, AML/KYC SOP hubs, and permissioned client records.</div>
+
+            <!-- Workflow Diagram Box -->
+            <div class="cluster-diagram-container">
+              <svg class="cluster-diagram-img" viewBox="0 0 1600 300" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Inter', -apple-system, sans-serif;">
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#888888" />
+                  </marker>
+                </defs>
+
+                <!-- Background -->
+                <rect width="100%" height="100%" fill="#FBFBFA" />
+
+                <!-- Nodes -->
+                <!-- Compliance Lead Dashboard -->
+                <rect x="20" y="60" width="180" height="70" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="110" y="90" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Compliance Lead</text>
+                <text x="110" y="110" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Dashboard</text>
+
+                <!-- Executive View -->
+                <rect x="80" y="210" width="120" height="50" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="140" y="240" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Executive View</text>
+
+                <!-- SLA risk block -->
+                <rect x="230" y="200" width="190" height="70" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="325" y="230" font-size="12" font-weight="500" fill="#37352F" text-anchor="middle">SLA risk, blocked revenue,</text>
+                <text x="325" y="250" font-size="12" font-weight="500" fill="#37352F" text-anchor="middle">conversion velocity</text>
+
+                <!-- KYC Case -->
+                <rect x="300" y="80" width="90" height="40" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="345" y="105" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">KYC Case</text>
+
+                <!-- Ops Queue -->
+                <rect x="310" y="145" width="100" height="45" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="360" y="172" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Ops Queue</text>
+
+                <!-- KYC Documents -->
+                <rect x="470" y="55" width="130" height="50" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="535" y="85" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">KYC Documents</text>
+
+                <!-- Compliance Tasks -->
+                <rect x="460" y="130" width="135" height="50" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="527" y="160" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Compliance Tasks</text>
+
+                <!-- Suitability & Product Eligibility -->
+                <rect x="440" y="205" width="180" height="60" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="530" y="232" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Suitability & Product</text>
+                <text x="530" y="250" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Eligibility</text>
+
+                <!-- Diamond: Complete? -->
+                <polygon points="700,165 745,120 790,165 745,210" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="745" y="170" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Complete?</text>
+
+                <!-- AI flags missing items -->
+                <rect x="860" y="110" width="180" height="65" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="950" y="138" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">AI flags missing items +</text>
+                <text x="950" y="158" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">next best action</text>
+
+                <!-- Client / Investor -->
+                <rect x="920" y="55" width="120" height="40" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="980" y="80" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Client / Investor</text>
+
+                <!-- Relationship Manager intake -->
+                <rect x="1070" y="55" width="180" height="55" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="1160" y="80" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Relationship Manager</text>
+                <text x="1160" y="98" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">intake</text>
+
+                <!-- Client / Investor Profile -->
+                <rect x="1280" y="55" width="160" height="45" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="1360" y="82" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Client / Investor Profile</text>
+
+                <!-- Investment Readiness Summary -->
+                <rect x="860" y="225" width="180" height="55" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="950" y="250" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Investment Readiness</text>
+                <text x="950" y="268" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Summary</text>
+
+                <!-- Ready for proposal / subscription -->
+                <rect x="1070" y="225" width="180" height="55" rx="3" fill="#EEEEEC" stroke="#D3D1CB" stroke-width="1.5" />
+                <text x="1160" y="250" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">Ready for proposal /</text>
+                <text x="1160" y="268" font-size="13" font-weight="500" fill="#37352F" text-anchor="middle">subscription</text>
+
+                <!-- Connectors & Arrows -->
+                <!-- Compliance Lead -> KYC Case -->
+                <path d="M 200 95 L 300 95" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- Executive View -> SLA risk -->
+                <path d="M 200 235 L 230 235" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- KYC Case -> KYC Documents, Compliance Tasks, Suitability -->
+                <path d="M 390 90 L 440 90 Q 450 90 450 80 L 450 80 Q 450 75 460 75 L 470 75" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+                <path d="M 390 100 L 420 100 Q 430 100 430 145 L 460 145" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+                <path d="M 380 120 L 415 120 Q 425 120 425 220 L 440 220" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- Ops Queue -> Compliance Tasks -->
+                <path d="M 410 167 L 435 167 Q 445 167 445 160 L 460 160" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- Inputs -> Complete? Diamond -->
+                <path d="M 600 80 L 635 80 Q 655 80 665 140 L 705 160" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+                <path d="M 595 155 L 700 165" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+                <path d="M 620 235 L 650 235 Q 670 235 680 185 L 705 170" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- Complete? -> No -> AI flags -->
+                <path d="M 770 142 L 850 142" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+                <text x="815" y="137" font-size="12" font-weight="600" fill="#37352F">No</text>
+
+                <!-- Complete? -> Yes -> Investment Readiness Summary -->
+                <path d="M 770 188 L 820 188 Q 850 188 850 245 L 860 245" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+                <text x="800" y="210" font-size="12" font-weight="600" fill="#37352F">Yes</text>
+
+                <!-- Client / Investor -> RM Intake -> Client Profile -->
+                <path d="M 1040 75 L 1070 75" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+                <path d="M 1250 82 L 1280 82" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- AI flags -> RM Intake -->
+                <path d="M 1040 142 L 1060 142 Q 1075 142 1075 105 L 1075 95" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- Client Profile -> KYC Case loopback -->
+                <path d="M 1360 55 L 1360 30 Q 1360 20 1340 20 L 400 20 Q 380 20 380 70 L 380 80" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+                <!-- Investment Readiness -> Ready for proposal -->
+                <path d="M 1040 252 L 1070 252" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+              </svg>
+
+              <!-- Caption with user specifications -->
+              <div class="cluster-diagram-caption">
+                <strong>Example for Endowus: KYC Case Coordinator.</strong> Shortening workflow by 1-3 business days for high AUM clients can unlock investment dramatically. Conservative estimate of shortening 20-30% faster onboarding whilst still preserving compliance control for regulated environment.
+              </div>
+            </div>
           </div>
         </div>
 
