@@ -629,6 +629,243 @@
       color: var(--text-light);
     }
 
+    /* Displacement Sequence Custom Styles */
+    .displacement-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 26px;
+      margin-top: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .displacement-flow-scroll {
+      overflow-x: auto;
+      padding-bottom: 14px;
+      margin: 0 -10px 24px;
+      padding-left: 10px;
+      padding-right: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .displacement-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      min-width: max-content;
+    }
+
+    .disp-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 195px;
+      flex-shrink: 0;
+      text-align: left;
+    }
+
+    .disp-node-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 14px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .disp-node-box.parallel {
+      background: var(--tag-yellow-bg);
+      border-color: rgba(115, 81, 13, 0.2);
+    }
+
+    .disp-node-box.money {
+      background: var(--tag-green-bg);
+      border-color: rgba(30, 78, 43, 0.2);
+    }
+
+    .disp-node-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .disp-node-ico {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--tag-blue-bg);
+      color: var(--tag-blue-txt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .disp-node-box.parallel .disp-node-ico {
+      background: #EED3AC;
+      color: var(--tag-yellow-txt);
+    }
+
+    .disp-node-box.money .disp-node-ico {
+      background: #C4E3CC;
+      color: var(--tag-green-txt);
+    }
+
+    .disp-node-time {
+      font-size: 10px;
+      color: var(--text-light);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .disp-node-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-title);
+      line-height: 1.25;
+    }
+
+    .disp-node-money {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--tag-green-txt);
+      background: #FFFFFF;
+      border: 1px solid rgba(30, 78, 43, 0.2);
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+      width: fit-content;
+    }
+
+    .disp-node-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .disp-node-bullets li {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .disp-node-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .disp-node-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+    }
+
+    .disp-node-box.parallel .disp-node-bullets li::before {
+      background: var(--tag-yellow-txt);
+    }
+
+    .disp-node-box.money .disp-node-bullets li::before {
+      background: var(--tag-green-txt);
+    }
+
+    .disp-connector {
+      width: 22px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 6px;
+    }
+
+    .disp-connector svg {
+      display: block;
+    }
+
+    .disp-stake-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .disp-stake-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .disp-stake-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .disp-stake-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .disp-stake-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .disp-stake-role {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .disp-stake-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-title);
+    }
+
+    .disp-stake-action {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .disp-stake-action b {
+      color: var(--text-title);
+      font-weight: 600;
+    }
+
     /* Hero / Cover */
     .hero-title {
       font-size: 54px;
@@ -770,12 +1007,7 @@
           <div class="card-label">Why Singapore</div>
           <div class="card-title">💡 Why Singapore</div>
           <div class="card-desc">
-            Singapore represents Notion's highest density of digital-native talent, tech startups, regional MNC headquarters, and AI-forward enterprises. Enterprise monetization requires a disciplined <strong>Product-Led Sales (PLS) + Top-Down Strategic Selling</strong> framework.
-            <div class="inner-subcard" style="margin-top: 12px;">
-              <strong>Market Sizing & Regional Leverage:</strong><br />
-              • <strong>Singapore TAM & SOM:</strong> TAM of <strong>~$380M+</strong> across enterprise collaboration, knowledge management, and workflow automation, with an immediate addressable SOM of <strong>~$45M–$60M</strong> anchored in high-density tech, fintech, regional MNC HQs, and fast-growing digital scale-ups.<br />
-              • <strong>Downstream Impact on SEA + HK:</strong> Singapore functions as the regional procurement, architecture, and budget epicenter. Standardizing Notion across SG headquarters creates rapid cross-border adoption across shared-service centers in Malaysia and the Philippines, high-growth operational subsidiaries in Indonesia and Vietnam, and parallel financial services deployments in Hong Kong.
-            </div>
+            Singapore represents Notion's highest density of digital-native talent, and a <strong>TAM of $380M</strong> and <strong>SOM of $45M</strong> anchored in fintech, tech, regional MNCs, and fast-growing digital scale ups. Singapore functions as the role model of the larger region, and can create rapid cross border adoption in shared service centers in Malaysia &amp; Philippines, parallel financial service deployments in HK, and high growth subsidiaries in Indonesia &amp; Vietnam.
           </div>
         </div>
       </div>
@@ -793,7 +1025,7 @@
       <div class="section-eyebrow"><span>🗺️</span> Section 2 &bull; Commercial Architecture</div>
       <h2 class="section-title">GTM Strategy</h2>
       <p class="section-subtitle">
-        Regional ecosystem leverage, outbound displacement engines, high-ACV consumer conversion, and phased execution.
+        Regional ecosystem leverage, vertical use cases, displacement blueprints, and high-ACV consumer conversion.
       </p>
 
       <!-- 2A. Regional Ecosystem & Partners -->
@@ -826,9 +1058,9 @@
         </div>
       </div>
 
-      <!-- 2B. Outbound Engine & Industry Clusters -->
+      <!-- 2B. Co-Craft Enterprise Use Cases -->
       <div class="subsection-block">
-        <h3 class="subsection-heading"><span>⚔️</span> Outbound Engine & Industry Clusters</h3>
+        <h3 class="subsection-heading"><span>⚔️</span> Co-Craft Enterprise Use Cases</h3>
 
         <!-- SEA Strategic Accounts Link Block -->
         <a href="https://app.notion.com/p/85a7af340d134b81ba6f93f8e606bc4d?v=df50022335cb4d8389542d81bb4395aa&t=3c3274e7fa578055a49c00a95bd8c60e" target="_blank" rel="noopener noreferrer" class="notion-link-block">
@@ -841,24 +1073,6 @@
           </div>
           <span class="notion-tag tag-blue">Open Database</span>
         </a>
-        
-        <div class="bento-grid" style="margin-bottom: 20px;">
-          <div class="bento-card col-6">
-            <div class="card-label" style="color: var(--tag-red-txt);">Legacy Displacement</div>
-            <div class="card-title">Displace Confluence End-to-End</div>
-            <div class="card-desc">
-              Convert documentation graveyards into live, connected AI workspaces. Target accounts 90 days before renewal cliffs with 1-click hierarchy migrations and unified knowledge ROI modeling.
-            </div>
-          </div>
-
-          <div class="bento-card col-6">
-            <div class="card-label" style="color: var(--tag-green-txt);">Vertical Solutions</div>
-            <div class="card-title">Co-Craft Enterprise Industry Use Cases</div>
-            <div class="card-desc">
-              Package repeatable operating templates across 6 target clusters to compress sales cycles and solve regulatory, product, and compliance bottlenecks.
-            </div>
-          </div>
-        </div>
 
         <!-- Interactive Cluster Tabs -->
         <div class="cluster-tabs-nav">
@@ -1098,7 +1312,235 @@
         </div>
       </div>
 
-      <!-- 2C. Consumer Conversion -->
+      <!-- 2C. Legacy Displacement Section -->
+      <div class="subsection-block">
+        <h3 class="subsection-heading"><span>🔄</span> Confluence &rarr; Notion Displacement Sequence</h3>
+        <p class="card-desc" style="margin-bottom: 14px;">
+          One team pilot, parallel IT track, POC close — then expand into mid-market and enterprise. Singapore play, week 1 to month 12+.
+        </p>
+
+        <div class="displacement-wrap">
+          <div class="card-label">Execution Timeline</div>
+          <div class="displacement-flow-scroll">
+            <div class="displacement-flow">
+
+              <!-- Node 1 -->
+              <div class="disp-node">
+                <div class="disp-node-box">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">1</div>
+                    <div>
+                      <div class="disp-node-time">Wk 1–2</div>
+                      <div class="disp-node-title">Discover &amp; qualify</div>
+                    </div>
+                  </div>
+                  <ul class="disp-node-bullets">
+                    <li>&lt;500 seats, no deep Jira wiring</li>
+                    <li>Trigger event identified</li>
+                    <li>Budget owner named</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="disp-connector">
+                <svg width="22" height="14" viewBox="0 0 26 16"><line x1="0" y1="8" x2="18" y2="8" stroke="#B9C2D1" stroke-width="2"/><path d="M18 3 L25 8 L18 13" fill="none" stroke="#B9C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <!-- Node 2 -->
+              <div class="disp-node">
+                <div class="disp-node-box">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">2</div>
+                    <div>
+                      <div class="disp-node-time">Wk 2–6</div>
+                      <div class="disp-node-title">Land — team pilot</div>
+                    </div>
+                  </div>
+                  <ul class="disp-node-bullets">
+                    <li>Real, messy space migrated</li>
+                    <li>Champion personally invested</li>
+                    <li>Weekly usage tracked</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="disp-connector">
+                <svg width="22" height="14" viewBox="0 0 26 16"><line x1="0" y1="8" x2="18" y2="8" stroke="#B9C2D1" stroke-width="2"/><path d="M18 3 L25 8 L18 13" fill="none" stroke="#B9C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <!-- Parallel IT Track -->
+              <div class="disp-node">
+                <div class="disp-node-box parallel">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">∥</div>
+                    <div>
+                      <div class="disp-node-time">Runs alongside</div>
+                      <div class="disp-node-title">IT &amp; security track</div>
+                    </div>
+                  </div>
+                  <ul class="disp-node-bullets">
+                    <li>SSO / data residency reviewed</li>
+                    <li>Version retention addressed</li>
+                    <li>Directional sign-off secured</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="disp-connector">
+                <svg width="22" height="14" viewBox="0 0 26 16"><line x1="0" y1="8" x2="18" y2="8" stroke="#B9C2D1" stroke-width="2"/><path d="M18 3 L25 8 L18 13" fill="none" stroke="#B9C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <!-- Node 3 -->
+              <div class="disp-node">
+                <div class="disp-node-box">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">3</div>
+                    <div>
+                      <div class="disp-node-time">Wk 4</div>
+                      <div class="disp-node-title">Prove — adoption data</div>
+                    </div>
+                  </div>
+                  <ul class="disp-node-bullets">
+                    <li>Usage metrics collected</li>
+                    <li>Champion testimonial captured</li>
+                    <li>Readout paired with IT sign-off</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="disp-connector">
+                <svg width="22" height="14" viewBox="0 0 26 16"><line x1="0" y1="8" x2="18" y2="8" stroke="#B9C2D1" stroke-width="2"/><path d="M18 3 L25 8 L18 13" fill="none" stroke="#B9C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <!-- Node 4 -->
+              <div class="disp-node">
+                <div class="disp-node-box">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">4</div>
+                    <div>
+                      <div class="disp-node-time">Wk 5–6</div>
+                      <div class="disp-node-title">Expand — adjacent team</div>
+                    </div>
+                  </div>
+                  <ul class="disp-node-bullets">
+                    <li>2nd team onboarded</li>
+                    <li>Cross-functional pull shown</li>
+                    <li>Consolidation story forming</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="disp-connector">
+                <svg width="22" height="14" viewBox="0 0 26 16"><line x1="0" y1="8" x2="18" y2="8" stroke="#B9C2D1" stroke-width="2"/><path d="M18 3 L25 8 L18 13" fill="none" stroke="#B9C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <!-- Node 5: Close POC -->
+              <div class="disp-node">
+                <div class="disp-node-box money">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">5</div>
+                    <div>
+                      <div class="disp-node-time">Wk 8–14</div>
+                      <div class="disp-node-title">Close POC</div>
+                    </div>
+                  </div>
+                  <span class="disp-node-money">$30K–$40K ACV</span>
+                  <ul class="disp-node-bullets">
+                    <li>Procurement &amp; legal cleared</li>
+                    <li>CFO sees consolidation savings</li>
+                    <li>Dept-level contract signed</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="disp-connector">
+                <svg width="22" height="14" viewBox="0 0 26 16"><line x1="0" y1="8" x2="18" y2="8" stroke="#B9C2D1" stroke-width="2"/><path d="M18 3 L25 8 L18 13" fill="none" stroke="#B9C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <!-- Node 6: Mid-Market Expansion -->
+              <div class="disp-node">
+                <div class="disp-node-box money">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">6</div>
+                    <div>
+                      <div class="disp-node-time">Mo 4–8</div>
+                      <div class="disp-node-title">Mid-market expansion</div>
+                    </div>
+                  </div>
+                  <span class="disp-node-money">$50K–$80K ACV</span>
+                  <ul class="disp-node-bullets">
+                    <li>Win replicated to 2nd business unit</li>
+                    <li>Admin/governance template deployed</li>
+                    <li>Expansion clause negotiated</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="disp-connector">
+                <svg width="22" height="14" viewBox="0 0 26 16"><line x1="0" y1="8" x2="18" y2="8" stroke="#B9C2D1" stroke-width="2"/><path d="M18 3 L25 8 L18 13" fill="none" stroke="#B9C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <!-- Node 7: Enterprise Expansion -->
+              <div class="disp-node">
+                <div class="disp-node-box money">
+                  <div class="disp-node-head">
+                    <div class="disp-node-ico">7</div>
+                    <div>
+                      <div class="disp-node-time">Mo 6–12+</div>
+                      <div class="disp-node-title">Enterprise expansion</div>
+                    </div>
+                  </div>
+                  <span class="disp-node-money">$100K+ ACV</span>
+                  <ul class="disp-node-bullets">
+                    <li>Company-wide standardization</li>
+                    <li>Multi-year, volume pricing</li>
+                    <li>C-suite executive sponsor secured</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card-label">Stakeholder Engagement Matrix</div>
+          <div class="disp-stake-row">
+            <div class="disp-stake-card">
+              <div class="disp-stake-head">
+                <div class="disp-stake-avatar">C</div>
+                <div>
+                  <div class="disp-stake-role">Champion</div>
+                  <div class="disp-stake-name">Ops / CoS Lead</div>
+                </div>
+              </div>
+              <div class="disp-stake-action"><b>Knowledge Audit Workshop:</b> Map the documentation sprawl, quantify hours lost.</div>
+            </div>
+
+            <div class="disp-stake-card">
+              <div class="disp-stake-head">
+                <div class="disp-stake-avatar">IT</div>
+                <div>
+                  <div class="disp-stake-role">Blocker</div>
+                  <div class="disp-stake-name">IT / Engineering Lead</div>
+                </div>
+              </div>
+              <div class="disp-stake-action"><b>Security Roundtable:</b> SSO, data residency, retention, run strictly in parallel.</div>
+            </div>
+
+            <div class="disp-stake-card">
+              <div class="disp-stake-head">
+                <div class="disp-stake-avatar">D</div>
+                <div>
+                  <div class="disp-stake-role">Decision Maker</div>
+                  <div class="disp-stake-name">CIO / COO</div>
+                </div>
+              </div>
+              <div class="disp-stake-action"><b>Business Case Session:</b> POC + sign-off, framed around tech stack consolidation.</div>
+            </div>
+          </div>
+
+          <div class="notion-callout highlight" style="margin: 0;">
+            <div class="callout-icon">💡</div>
+            <div>
+              <strong>The one rule that decides the deal:</strong> IT runs in parallel from week two — never sequentially after the pilot succeeds. Everything from POC close onward compounds off that trust.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2D. Consumer Conversion -->
       <div class="subsection-block">
         <h3 class="subsection-heading"><span>📈</span> Consumer Conversion: PLG into $50k–$250k+ ARR</h3>
         <div class="bento-grid">
@@ -1117,7 +1559,7 @@
         </div>
       </div>
 
-      <!-- 2D. 18M Execution Roadmap -->
+      <!-- 2E. 18M Execution Roadmap -->
       <div class="subsection-block">
         <h3 class="subsection-heading"><span>🗓️</span> 18-Month Execution Roadmap</h3>
         <p class="card-desc" style="margin-bottom: 16px;">
