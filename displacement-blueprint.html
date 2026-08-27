@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Displacement Blueprint — Confluence → Notion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1B2C;
+    --ink-soft:#16283F;
+    --paper:#F4F6F5;
+    --paper-dim:#E7EBE9;
+    --brass:#C08552;
+    --brass-bright:#DDA15E;
+    --teal:#4F8A76;
+    --red:#B5563C;
+    --text-on-paper:#1A2333;
+    --text-dim:#5A6472;
+    --line:rgba(14,27,44,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--text-on-paper);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
+  .display{font-family:'Space Grotesk', sans-serif;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:56px 24px 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(244,246,245,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,246,245,0.045) 1px, transparent 1px);
+    background-size:28px 28px;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; max-width:760px; margin:0 auto;}
+  .eyebrow{
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--brass-bright); font-weight:500; margin-bottom:14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--brass-bright);}
+  .hero h1{
+    font-size:clamp(28px,6vw,42px); font-weight:700; line-height:1.12;
+    letter-spacing:-0.01em; margin-bottom:16px;
+  }
+  .hero h1 span{color:var(--brass-bright);}
+  .hero p{
+    font-size:15px; color:rgba(244,246,245,0.68); max-width:520px; line-height:1.6;
+  }
+  .hero-tag{
+    margin-top:28px; display:inline-flex; gap:8px; align-items:center;
+    font-size:12px; color:rgba(244,246,245,0.5); border:1px solid rgba(244,246,245,0.18);
+    padding:7px 14px; border-radius:100px;
+  }
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--teal);}
+
+  /* ---------- SECTION LABELS ---------- */
+  .section{max-width:760px; margin:0 auto; padding:52px 24px;}
+  .section-head{margin-bottom:28px;}
+  .section-head .num{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--brass);
+    font-weight:500; margin-bottom:6px; display:block;
+  }
+  .section-head h2{
+    font-family:'Space Grotesk', sans-serif; font-size:22px; font-weight:700;
+    color:var(--ink); letter-spacing:-0.01em;
+  }
+  .section-head .sub{font-size:13.5px; color:var(--text-dim); margin-top:6px; max-width:480px;}
+
+  /* ---------- TIMELINE (PIPELINE) ---------- */
+  .pipeline{position:relative; padding-left:2px;}
+  .pipeline::before{
+    content:""; position:absolute; left:19px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(to bottom, var(--brass), var(--teal));
+  }
+  .stage{
+    position:relative; padding-left:52px; padding-bottom:30px;
+  }
+  .stage:last-child{padding-bottom:0;}
+  .stage-marker{
+    position:absolute; left:0; top:0; width:40px; height:40px; border-radius:50%;
+    background:var(--ink); color:var(--brass-bright); display:flex; align-items:center;
+    justify-content:center; font-family:'IBM Plex Mono', monospace; font-size:13px;
+    font-weight:500; border:2px solid var(--brass); z-index:1;
+  }
+  .stage-body{
+    background:#fff; border:1px solid var(--line); border-radius:10px; padding:16px 18px;
+  }
+  .stage-time{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--teal);
+    text-transform:uppercase; letter-spacing:0.08em; font-weight:500; margin-bottom:4px;
+  }
+  .stage-title{font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:15.5px; margin-bottom:5px;}
+  .stage-desc{font-size:13px; color:var(--text-dim); line-height:1.55;}
+  .stage-body.parallel{border-left:3px solid var(--red); background:#FBF3EF;}
+  .stage-body.parallel .stage-time{color:var(--red);}
+
+  /* ---------- STAKEHOLDER GAUGES ---------- */
+  .gauges{display:flex; flex-direction:column; gap:18px;}
+  .gauge-card{
+    background:var(--ink); border-radius:14px; padding:22px 20px; color:var(--paper);
+    position:relative; overflow:hidden;
+  }
+  .gauge-card::after{
+    content:""; position:absolute; top:-40px; right:-40px; width:140px; height:140px;
+    border-radius:50%; background:radial-gradient(circle, rgba(192,133,82,0.18), transparent 70%);
+  }
+  .gauge-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; position:relative;}
+  .gauge-role{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--brass-bright); margin-bottom:4px;
+  }
+  .gauge-name{font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:18px;}
+  .meter{
+    display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex-shrink:0;
+  }
+  .meter-label{font-size:9px; text-transform:uppercase; letter-spacing:0.08em; color:rgba(244,246,245,0.45);}
+  .meter-bars{display:flex; gap:3px;}
+  .meter-bars span{width:5px; height:14px; border-radius:2px; background:rgba(244,246,245,0.15);}
+  .meter-bars span.on{background:var(--brass-bright);}
+
+  .gauge-pain{
+    font-size:13.5px; color:rgba(244,246,245,0.82); line-height:1.6; margin-bottom:16px;
+    padding-bottom:16px; border-bottom:1px dashed rgba(244,246,245,0.18); position:relative;
+  }
+  .gauge-pain b{color:#fff; font-weight:600;}
+
+  .play-label{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--teal); margin-bottom:8px; position:relative;
+  }
+  .play{
+    background:rgba(244,246,245,0.06); border:1px solid rgba(244,246,245,0.12);
+    border-radius:8px; padding:12px 14px; position:relative;
+  }
+  .play-name{font-weight:600; font-size:14px; margin-bottom:4px; color:#fff;}
+  .play-desc{font-size:12.5px; color:rgba(244,246,245,0.65); line-height:1.5;}
+  .play-adjacent{
+    margin-top:10px; padding-top:10px; border-top:1px solid rgba(244,246,245,0.1);
+    font-size:12px; color:rgba(244,246,245,0.55);
+  }
+  .play-adjacent b{color:var(--brass-bright); font-weight:500;}
+
+  /* ---------- RISK STRIP ---------- */
+  .risk-strip{
+    background:var(--paper-dim); border-radius:10px; padding:18px 20px; margin-top:6px;
+    display:flex; gap:14px; align-items:flex-start;
+  }
+  .risk-strip .icon{
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:13px; color:var(--red);
+    background:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center;
+    justify-content:center; flex-shrink:0; border:1.5px solid var(--red);
+  }
+  .risk-strip p{font-size:12.5px; color:var(--text-dim); line-height:1.55;}
+  .risk-strip b{color:var(--ink);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink); color:rgba(244,246,245,0.4); text-align:center;
+    padding:26px 24px; font-size:11px; font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.04em;
+  }
+
+  @media(min-width:640px){
+    .gauges{flex-direction:row;}
+    .gauge-card{flex:1;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Displacement Blueprint</div>
+      <h1>Confluence stores it.<br><span>Notion runs on it.</span></h1>
+      <p>The sequenced route from single-team pilot to enterprise consolidation — mapped stage by stage, stakeholder by stakeholder, for the Singapore mid-market play.</p>
+      <div class="hero-tag"><span class="dot"></span>Wedge → Parallel IT track → Consolidation close</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="num">01 — SEQUENCE</span>
+      <h2>The plan of attack</h2>
+      <div class="sub">Six stages, one non-negotiable rule: IT runs in parallel from week two, never after the pilot succeeds.</div>
+    </div>
+
+    <div class="pipeline">
+      <div class="stage">
+        <div class="stage-marker">1</div>
+        <div class="stage-body">
+          <div class="stage-time">Week 1–2 · Discover</div>
+          <div class="stage-title">Qualify the wiring</div>
+          <div class="stage-desc">Confirm seat count, trigger event, and — critically — which spaces touch Jira/Bitbucket macros or JSM. This single question decides wedge vs. full displacement.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-marker">2</div>
+        <div class="stage-body">
+          <div class="stage-time">Week 2–6 · Land</div>
+          <div class="stage-title">Single-team pilot</div>
+          <div class="stage-desc">Migrate one real, messy Confluence space with the Champion's own team. No clean demo spaces — the pain has to be genuine for the proof to mean anything.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-marker">∥</div>
+        <div class="stage-body parallel">
+          <div class="stage-time">Runs alongside stage 2 · Parallel Track</div>
+          <div class="stage-title">Engage IT/Security early</div>
+          <div class="stage-desc">SSO, data residency, version-history requirements — get directional sign-off during the pilot, not after. This is the step that saves the deal.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-marker">3</div>
+        <div class="stage-body">
+          <div class="stage-time">Week 4 · Prove</div>
+          <div class="stage-title">Adoption readout</div>
+          <div class="stage-desc">Real usage data — logins, pages created, search behaviour — plus a Champion testimonial, presented alongside the IT governance sign-off, together.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-marker">4</div>
+        <div class="stage-body">
+          <div class="stage-time">Week 5–6 · Expand</div>
+          <div class="stage-title">Adjacent team pull</div>
+          <div class="stage-desc">Bring in a second team — HR or Sales — to demonstrate cross-functional demand before the deal reaches procurement.</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-marker">5</div>
+        <div class="stage-body">
+          <div class="stage-time">Close</div>
+          <div class="stage-title">Consolidation, not replacement</div>
+          <div class="stage-desc">Frame the CFO ask as retiring tool sprawl into one system — budget-neutral, not a rip-and-replace risk story.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="num">02 — STAKEHOLDERS</span>
+      <h2>Three rooms, three plays</h2>
+      <div class="sub">Each stakeholder needs a different room to change their mind in — not the same deck three times.</div>
+    </div>
+
+    <div class="gauges">
+      <div class="gauge-card">
+        <div class="gauge-top">
+          <div>
+            <div class="gauge-role">Champion</div>
+            <div class="gauge-name">Ops / CoS / L&D Lead</div>
+          </div>
+          <div class="meter">
+            <div class="meter-label">Resistance</div>
+            <div class="meter-bars"><span class="on"></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="gauge-pain">Hunting across Confluence, Slack, and shadow Notion docs daily. <b>Needs a visible quick win</b> to build internal credibility, not another platform migration to manage.</div>
+        <div class="play-label">Winning play</div>
+        <div class="play">
+          <div class="play-name">Knowledge Audit Workshop</div>
+          <div class="play-desc">90-minute live session mapping their actual tool sprawl and quantifying hours lost — in their own numbers, not yours.</div>
+        </div>
+      </div>
+
+      <div class="gauge-card">
+        <div class="gauge-top">
+          <div>
+            <div class="gauge-role">Blocker</div>
+            <div class="gauge-name">IT / Engineering Lead</div>
+          </div>
+          <div class="meter">
+            <div class="meter-label">Resistance</div>
+            <div class="meter-bars"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+          </div>
+        </div>
+        <div class="gauge-pain">Owns the Jira relationship and migration risk. Legitimately protecting <b>compliance certifications and governance</b> Confluence already has.</div>
+        <div class="play-label">Winning play</div>
+        <div class="play">
+          <div class="play-name">Security & Architecture Roundtable</div>
+          <div class="play-desc">Consultative session on SSO, data residency, and version retention — run in parallel, framed as due diligence, not a sales pitch.</div>
+          <div class="play-adjacent"><b>Adjacent hook:</b> if the team is AI-forward, demo the Notion Developer Platform (Workers/CLI/GitHub) as a complement to Jira — not a replacement pitch.</div>
+        </div>
+      </div>
+
+      <div class="gauge-card">
+        <div class="gauge-top">
+          <div>
+            <div class="gauge-role">Decision Maker</div>
+            <div class="gauge-name">CIO / COO</div>
+          </div>
+          <div class="meter">
+            <div class="meter-label">Resistance</div>
+            <div class="meter-bars"><span class="on"></span><span class="on"></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="gauge-pain">Budget scrutiny is up, buying committees are larger. <b>Wants consolidation savings</b>, not a new line item to defend.</div>
+        <div class="play-label">Winning play</div>
+        <div class="play">
+          <div class="play-name">Consolidation Business Case Session</div>
+          <div class="play-desc">POC readout bundled with the IT sign-off already secured — presented as retiring tool sprawl, not adding spend.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="risk-strip">
+      <div class="icon">!</div>
+      <p><b>The one failure mode that kills this sequence:</b> running the IT/Security track sequentially, after the pilot succeeds, instead of in parallel from week two. That's the difference between an 8-week close and a 6-month stall.</p>
+    </div>
+  </div>
+
+  <footer>DISPLACEMENT BLUEPRINT · CONFLUENCE → NOTION · SG ENTERPRISE</footer>
+
+</body>
+</html>
